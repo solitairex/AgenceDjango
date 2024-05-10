@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 mb-5">
+  <h3 class="mb-3">Venez reserver vos vacances chez Agence de Py, la meilleur agence au maroc</h3>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card shadow" style="width: 18rem;">
+        <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/0a/41/82/lobby-bar.jpg?w=1200&h=-1&s=1" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Sol Oasis Marrakech</h5>
+          <p class="card-text">Hôtel Sol Oasis Marrakech All Inclusive, situé au cœur d'une palmeraie. Emplacement parfait pour visiter les environs de Marrakech et faire des excursions. Avec des vues spectaculaires sur les montagnes de l'Atlas. Service de navette gratuit vers le centre-ville.</p>
+          <a href="{%url 'hotel_reservation' %}" class="btn btn-primary">Cliquez pour reserver</a>
+        </div>
+      </div>
+      </div>
+    <div class="col-lg-4">
+      <div class="card shadow" style="width: 18rem;">
+        <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/8f/0f/exterior-view.jpg?w=1100&h=-1&s=1" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Movenpick Hotel</h5>
+          <p class="card-text">idéalement situé sur la superbe avenue Mohammed VI, dans le centre-ville, à deux pas de la médina,le Mövenpick Mansour Eddahbi Marrakech,Mövenpick Mansour Eddahbi Marrakech vous propose 503 chambres et suites ainsi que des piscines ,un spa,un centre de remise en forme,cinq restaurant.</p>
+          <a href="{%url 'hotel_reservation' %}" class="btn btn-primary">Cliquez pour reserver</a>
+        </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card shadow" style="width: 18rem;">
+          <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/e2/5b/e5/chambre-deluxe.jpg?w=1200&h=-1&s=1" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Riad la Parenthese</h5>
+            <p class="card-text">Découvrez pourquoi le Riad la Parenthese est le petit hôtel préféré des voyageurs visitant Marrakech. Offrant un grand confort et un excellent rapport qualité-prix, il propose un cadre un romantique et un large éventail de services conçus pour les voyageurs comme vous.</p>
+            <a href="{%url 'hotel_reservation' %}" class="btn btn-primary">Cliquez pour reserver</a>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+  {% endblock %}

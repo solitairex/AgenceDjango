@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galerie de photos</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .category {
+      flex-basis: 30%;
+    }
+
+    .photo {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    img {
+      height: auto;
+      width: 350px;
+      max-height: 350px;
+      cursor: pointer;
+    }
+
+    .full-screen-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .full-screen-image img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .full-screen-image img:hover {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .photo:nth-child(3) img,
+    .photo:nth-child(4) img {
+      width: 350px;
+      max-width: 350px;
+    }
+  </style>
+  <script>
+    function expandImage(img) {
+      var fullScreenImage = document.createElement("div");
+      fullScreenImage.className = "full-screen-image";
+      fullScreenImage.onclick = function () {
+        document.body.removeChild(fullScreenImage);
+      };
+      var imgElement = document.createElement("img");
+      imgElement.src = img.src;
+      fullScreenImage.appendChild(imgElement);
+      document.body.appendChild(fullScreenImage);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="category">
+      <h2>Sol Oasis Marrakech</h2>
+      <div class="photo">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/0a/41/82/lobby-bar.jpg?w=1200&h=-1&s=1" alt="Photo 1" onclick="expandImage(this)" >
+
+        <p></p>
+      </div>
+      <div class="photo">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/27/eb/97/sol-oasis-marrakech.jpg?w=1200&h=-1&s=1" alt="Photo 2" onclick="expandImage(this)">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Movenpick Hotel</h2>
+      <div class="photo">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/8f/0f/exterior-view.jpg?w=1100&h=-1&s=1" alt="Photo 3" onclick="expandImage(this)" style="max-width: 300px; max-height: 3   00px;">
+        <p></p>
+      </div>
+      <div class="photo">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/52/04/79/guest-room.jpg?w=1100&h=-1&s=1" alt="Photo 4" onclick="expandImage(this)">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Riad la Parenthese</h2>
+      <div class="photo">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/e2/5b/e5/chambre-deluxe.jpg?w=1200&h=-1&s=1" alt="Photo 5" onclick="expandImage(this)">
+        <p></p>
+      </div>
+      <div class="photo">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/e2/5b/b4/vue-du-patio-la-nuit.jpg?w=1200&h=-1&s=1" alt="Photo 6" onclick="expandImage(this)">
+        <p></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+  {% endblock %}

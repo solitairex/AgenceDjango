@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Reservation</h2>
+  <form method="post" action="{% url 'hotel_reservation' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Nom:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="number_of_persons">Nombre de personnes:</label>
+      <input type="number" id="number_of_persons" name="number_of_persons" required>
+    </div>
+    <div class="form-group">
+      <label for="id_number">ID/CIN:</label>
+      <input type="text" id="id_number" name="id_number" required>
+    </div>
+    <div class="form-group">
+      <label for="hotel_choice">Choix de l'hôtel:</label>
+      <select id="hotel_choice" name="hotel_choice" required>
+        <option value="sol_oasis">Sol Oasis</option>
+        <option value="movenpick">Movenpick</option>
+        <option value="riad_la_parenthese">Riad la Parenthese</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="reservation_date">Date de reservation:</label>
+      <input type="date" id="reservation_date" name="reservation_date" required>
+    </div>
+    <button type="submit">Reserver</button>
+  </form>
+</div>
+
+{% endblock %}
